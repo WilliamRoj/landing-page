@@ -1,11 +1,15 @@
 // Creating Elements for Nav bar
 
+//create <li>
 function createList (text) {
     const li = document.createElement('li');
-    li.textContent = text;
+    li.className = 'anchor';
+    li.innerHTML = text;
+    
     return li;
 }
 
+//create 3 <li>
 function appendChildren (parent, children) {
     children.forEach(child => {
         parent.appendChild(child);
@@ -13,6 +17,9 @@ function appendChildren (parent, children) {
 }
 
 const myList = document.getElementById('navbar__list');
-let items = [createList('Section 1'), createList('Section 2'), createList('Section 3')];
+
+//add text to lis and also a tag to make links
+let items = [createList('<a href="#">Section 1</a>'), 
+createList('<a href="#">Section 2</a>'), createList('<a href="#">Section 3</a>')];
 
 appendChildren(myList, items);
