@@ -3,7 +3,7 @@
 //create <li>
 function createList (text) {
     const li = document.createElement('li');
-    li.className = 'anchor';
+    li.className = 'menu__link';
     li.innerHTML = text;
     
     return li;
@@ -38,18 +38,28 @@ const sectionThree = document.getElementById('c');
             left: 0,
             behavior: 'smooth'
         });
+        const section__1 = document.getElementById('section1');
+        const section__2 = document.getElementById('section2');
+        const section__3 = document.getElementById('section3')
+        section__1.classList.add('your-active-class');
+        section__2.classList.remove('your-active-class');
+        section__3.classList.remove('your-active-class');
     }
   });
 
   sectionTwo.addEventListener('click', {
     handleEvent: function (event) {
-        const sectionDos = document.querySelector('#section2');
-        sectionDos.classList.toggle('sectionDos');
         window.scrollTo({
-            top: 1200,
+            top: 1050,
             left: 0,
             behavior: 'smooth'
         });
+        const section__1 = document.getElementById('section1');
+        const section__2 = document.getElementById('section2');
+        const section__3 = document.getElementById('section3')
+        section__2.classList.add('your-active-class');
+        section__1.classList.remove('your-active-class');
+        section__3.classList.remove('your-active-class');
     }
   });
 
@@ -57,8 +67,16 @@ const sectionThree = document.getElementById('c');
     handleEvent: function (event) {
         window.scrollTo({
             top: 1900,
-            left: 0,
             behavior: 'smooth'
         });
+        const section__1 = document.getElementById('section1');
+        const section__2 = document.getElementById('section2');
+        const section__3 = document.getElementById('section3')
+        section__3.classList.add('your-active-class');
+        section__1.classList.remove('your-active-class');
+        section__2.classList.remove('your-active-class');
     }
   });
+
+// watch youtube vide Fade and scroll
+// search Toggle Class on/off
