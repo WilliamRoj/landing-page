@@ -25,7 +25,7 @@ createList('<a id="b" href="#">Section 2</a>'), createList('<a id="c" href="#">S
 appendChildren(myList, items);
 
 
-//WHen clicking on link in Nav bar, will take you to specific section with smooth transition
+//WHen clicking on link in Nav bar links, will take you to specific section with smooth transition
 
 const sectionOne = document.getElementById('a');
 const sectionTwo = document.getElementById('b');
@@ -50,7 +50,7 @@ const sectionThree = document.getElementById('c');
   sectionTwo.addEventListener('click', {
     handleEvent: function (event) {
         window.scrollTo({
-            top: 1050,
+            top: 1100,
             left: 0,
             behavior: 'smooth'
         });
@@ -78,5 +78,33 @@ const sectionThree = document.getElementById('c');
     }
   });
 
-// watch youtube vide Fade and scroll
-// search Toggle Class on/off
+// when scrolling to specific section, class change to have know which section you are in
+
+window.addEventListener('scroll', function(event){
+    let scroll = this.scrollY;
+    if(scroll > 1050 && scroll < 1500) {
+        const section__1 = document.getElementById('section1');
+        const section__2 = document.getElementById('section2');
+        const section__3 = document.getElementById('section3')
+        section__2.classList.add('your-active-class');
+        section__1.classList.remove('your-active-class');
+        section__3.classList.remove('your-active-class');
+    } 
+    
+    else if(scroll > 1700) {
+        const section__1 = document.getElementById('section1');
+        const section__2 = document.getElementById('section2');
+        const section__3 = document.getElementById('section3');
+        section__3.classList.add('your-active-class');
+        section__1.classList.remove('your-active-class');
+        section__2.classList.remove('your-active-class')
+    }
+    else {
+        const section__1 = document.getElementById('section1');
+        const section__2 = document.getElementById('section2');
+        const section__3 = document.getElementById('section3')
+        section__1.classList.add('your-active-class');
+        section__2.classList.remove('your-active-class');
+        section__3.classList.remove('your-active-class');
+    }
+});
