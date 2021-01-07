@@ -19,8 +19,12 @@ function appendChildren (parent, children) {
 const myList = document.getElementById('navbar__list');
 
 //add text to lis and also a tag to make links
-let items = [createList('<a id="a" href="#">Section 1</a>'), 
-createList('<a id="b" href="#">Section 2</a>'), createList('<a id="c" href="#">Section 3</a>')];
+let items = [
+    createList('<a id="a" href="#">Section 1</a>'), 
+    createList('<a id="b" href="#">Section 2</a>'), 
+    createList('<a id="c" href="#">Section 3</a>'), 
+    createList('<a id="d" href="#">Section 4</a>')
+];
 
 appendChildren(myList, items);
 
@@ -30,6 +34,7 @@ appendChildren(myList, items);
 const sectionOne = document.getElementById('a');
 const sectionTwo = document.getElementById('b');
 const sectionThree = document.getElementById('c');
+const sectionFour = document.getElementById('d');
 
   sectionOne.addEventListener('click', {
     handleEvent: function (event) {
@@ -40,10 +45,12 @@ const sectionThree = document.getElementById('c');
         });
         const section__1 = document.getElementById('section1');
         const section__2 = document.getElementById('section2');
-        const section__3 = document.getElementById('section3')
+        const section__3 = document.getElementById('section3');
+        const section__4 = document.getElementById('section4');
         section__1.classList.add('your-active-class');
         section__2.classList.remove('your-active-class');
         section__3.classList.remove('your-active-class');
+        section__4.classList.remove('your-active-class');
     }
   });
 
@@ -56,10 +63,12 @@ const sectionThree = document.getElementById('c');
         });
         const section__1 = document.getElementById('section1');
         const section__2 = document.getElementById('section2');
-        const section__3 = document.getElementById('section3')
+        const section__3 = document.getElementById('section3');
+        const section__4 = document.getElementById('section4');
         section__2.classList.add('your-active-class');
         section__1.classList.remove('your-active-class');
         section__3.classList.remove('your-active-class');
+        section__4.classList.remove('your-active-class');
     }
   });
 
@@ -71,10 +80,29 @@ const sectionThree = document.getElementById('c');
         });
         const section__1 = document.getElementById('section1');
         const section__2 = document.getElementById('section2');
-        const section__3 = document.getElementById('section3')
+        const section__3 = document.getElementById('section3');
+        const section__4 = document.getElementById('section4');
         section__3.classList.add('your-active-class');
         section__1.classList.remove('your-active-class');
         section__2.classList.remove('your-active-class');
+        section__4.classList.remove('your-active-class');
+    }
+  });
+
+  sectionFour.addEventListener('click', {
+    handleEvent: function (event) {
+        window.scrollTo({
+            top: 2500,
+            behavior: 'smooth'
+        });
+        const section__1 = document.getElementById('section1');
+        const section__2 = document.getElementById('section2');
+        const section__3 = document.getElementById('section3');
+        const section__4 = document.getElementById('section4');
+        section__4.classList.add('your-active-class');
+        section__1.classList.remove('your-active-class');
+        section__2.classList.remove('your-active-class');
+        section__3.classList.remove('your-active-class');
     }
   });
 
@@ -85,26 +113,42 @@ window.addEventListener('scroll', function(event){
     if(scroll > 1050 && scroll < 1500) {
         const section__1 = document.getElementById('section1');
         const section__2 = document.getElementById('section2');
-        const section__3 = document.getElementById('section3')
+        const section__3 = document.getElementById('section3');
+        const section__4 = document.getElementById('section4');
         section__2.classList.add('your-active-class');
         section__1.classList.remove('your-active-class');
         section__3.classList.remove('your-active-class');
+        section__4.classList.remove('your-active-class');
     } 
     
-    else if(scroll > 1700) {
+    else if(scroll > 1700 && scroll < 2400) {
         const section__1 = document.getElementById('section1');
         const section__2 = document.getElementById('section2');
         const section__3 = document.getElementById('section3');
+        const section__4 = document.getElementById('section4');
         section__3.classList.add('your-active-class');
         section__1.classList.remove('your-active-class');
-        section__2.classList.remove('your-active-class')
+        section__2.classList.remove('your-active-class');
+        section__4.classList.remove('your-active-class');
+    }
+    else if(scroll > 2400) {
+        const section__1 = document.getElementById('section1');
+        const section__2 = document.getElementById('section2');
+        const section__3 = document.getElementById('section3');
+        const section__4 = document.getElementById('section4');
+        section__4.classList.add('your-active-class');
+        section__1.classList.remove('your-active-class');
+        section__2.classList.remove('your-active-class');
+        section__3.classList.remove('your-active-class');
     }
     else {
         const section__1 = document.getElementById('section1');
         const section__2 = document.getElementById('section2');
-        const section__3 = document.getElementById('section3')
+        const section__3 = document.getElementById('section3');
+        const section__4 = document.getElementById('section4');
         section__1.classList.add('your-active-class');
         section__2.classList.remove('your-active-class');
         section__3.classList.remove('your-active-class');
+        section__4.classList.remove('your-active-class');
     }
 });
