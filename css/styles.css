@@ -81,10 +81,17 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000d3c;
+    /* color: #000d3c; */
 }
 
-.navbar__menu .menu__link a:hover {
+/* .navbar__menu .menu__link a:hover {
+    background: #000d3c;
+    color: #fff;
+    text-decoration: underline;
+    transition: ease 0.3s all;
+} */
+
+.active {
     background: #000d3c;
     color: #fff;
     text-decoration: underline;
